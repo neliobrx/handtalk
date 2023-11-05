@@ -1,37 +1,52 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('questionnaireForm');
-    const pergunta3 = document.getElementById('pergunta3');
-    const pergunta7 = document.getElementById('pergunta7');
 
-    // Função para atualizar a visibilidade da pergunta 3
-    function togglePergunta3() {
-        const respostaQuestao1 = document.querySelector('input[name="questao1"]:checked');
-        if (pergunta3) {
-            pergunta3.style.display = respostaQuestao1 && respostaQuestao1.value === 'Sim' ? 'block' : 'none';
+    // Validacao formulario
+    function validateForm() {
+        const requiredQuestions = ['questao1', 'questao3', 'questao7', 'questao10'];
+        for (let question of requiredQuestions) {
+            if (!document.querySelector(`input[name="${question}"]:checked`)) {
+                alert(`Por favor, responda a questão: ${question}`);
+                return false;
+            }
         }
+        return true;
     }
 
-    // Função para atualizar a visibilidade da pergunta 7
-    function togglePergunta7() {
-        const respostaQuestao7 = document.querySelector('input[name="questao7"]:checked');
-        if (pergunta7) {
-            pergunta7.style.display = respostaQuestao7 && respostaQuestao7.value === 'Sim' ? 'block' : 'none';
+    // Coletar dados do formulário
+    function collectFormData() {
+        const formData = {
+            questao1: document.querySelector('input[name="questao1"]:checked')?.value,
+            questao2: document.querySelector('textarea[name="questao2"]').value,
+            questao3: document.querySelector('input[name="questao3"]:checked')?.value,
+            questao4: document.querySelector('textarea[name="questao4"]').value,
+            // Repetir para as demais questões
+            questao5: document.querySelector('textarea[name="questao5"]').value,
+            questao6: document.querySelector('textarea[name="questao6"]').value,
+            questao7: document.querySelector('input[name="questao7"]:checked')?.value,
+            questao8: document.querySelector('textarea[name="questao8"]').value,
+            questao9: document.querySelector('textarea[name="questao9"]').value,
+            questao10: document.querySelector('input[name="questao10"]:checked')?.value
+        };
+        return formData;
+    }
+
+    // Processando as respostas do formulário
+    function processFormResponses(formData) {
+        console.log('Dados do Formulário:', formData);
+        
+    }
+
+    // Event listener para o envio do formulário
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        if (validateForm()) {
+            const formData = collectFormData();
+            processFormResponses(formData);
+            alert('Formulário enviado com sucesso!');
+        } else {
+            alert('Por favor, complete todas as perguntas obrigatórias.');
         }
-    }
-
-    // Adiciona event listeners às opções de resposta das questões 1 e 7 diretamente pelo nome
-    document.querySelectorAll('input[name="questao1"]').forEach(input => {
-        input.addEventListener('change', togglePergunta3);
     });
-
-    document.querySelectorAll('input[name="questao7"]').forEach(input => {
-        input.addEventListener('change', togglePergunta7);
-    });
-
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Outras ações ao enviar o formulário podem ser adicionadas aqui
-        });
-    }
 });
