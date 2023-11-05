@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('questionnaireForm');
 
-    // Validacao formulario
-    function validateForm() {
-        const requiredQuestions = ['questao1', 'questao3', 'questao7', 'questao10'];
+    const requiredQuestions = ['questao1', 'questao3', 'questao7', 'questao10'];
+
+    const validateForm = () => {
         for (let question of requiredQuestions) {
             if (!document.querySelector(`input[name="${question}"]:checked`)) {
                 alert(`Por favor, responda a questão: ${question}`);
@@ -11,34 +11,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         return true;
-    }
+    };
 
-    // Coletar dados do formulário
-    function collectFormData() {
-        const formData = {
-            questao1: document.querySelector('input[name="questao1"]:checked')?.value,
-            questao2: document.querySelector('textarea[name="questao2"]').value,
-            questao3: document.querySelector('input[name="questao3"]:checked')?.value,
-            questao4: document.querySelector('textarea[name="questao4"]').value,
-            // Repetir para as demais questões
-            questao5: document.querySelector('textarea[name="questao5"]').value,
-            questao6: document.querySelector('textarea[name="questao6"]').value,
-            questao7: document.querySelector('input[name="questao7"]:checked')?.value,
-            questao8: document.querySelector('textarea[name="questao8"]').value,
-            questao9: document.querySelector('textarea[name="questao9"]').value,
-            questao10: document.querySelector('input[name="questao10"]:checked')?.value
-        };
+    const collectFormData = () => {
+        let formData = {};
+        for (let i = 1; i <= 10; i++) {
+            if (requiredQuestions.includes(`questao${i}`)) {
+                formData[`questao${i}`] = document.querySelector(`input[name="questao${i}"]:checked`)?.value;
+            } else {
+                formData[`questao${i}`] = document.querySelector(`textarea[name="questao${i}"]`).value;
+            }
+        }
         return formData;
-    }
+    };
 
-    // Processando as respostas do formulário
-    function processFormResponses(formData) {
+    const processFormResponses = (formData) => {
         console.log('Dados do Formulário:', formData);
-        
-    }
+    };
 
-    // Event listener para o envio do formulário
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         if (validateForm()) {
