@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('questionnaireForm');
+    var form = document.getElementById('questionnaireForm');
 
     // Validacao formulario
     function validateForm() {
-        const requiredQuestions = ['questao1', 'questao3', 'questao7', 'questao10'];
-        for (let question of requiredQuestions) {
-            if (!document.querySelector(`input[name="${question}"]:checked`)) {
-                alert(`Por favor, responda a questão: ${question}`);
+        var requiredQuestions = ['questao1', 'questao3', 'questao7', 'questao10'];
+        for (var i = 0; i < requiredQuestions.length; i++) {
+            var question = requiredQuestions[i];
+            if (!document.querySelector('input[name="' + question + '"]:checked')) {
+                alert('Por favor, responda a questão: ' + question);
                 return false;
             }
         }
@@ -15,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Coletar dados do formulário
     function collectFormData() {
-        const formData = {
-            questao1: document.querySelector('input[name="questao1"]:checked')?.value,
+        var formData = {
+            questao1: document.querySelector('input[name="questao1"]:checked') ? document.querySelector('input[name="questao1"]:checked').value : null,
             questao2: document.querySelector('textarea[name="questao2"]').value,
-            questao3: document.querySelector('input[name="questao3"]:checked')?.value,
+            questao3: document.querySelector('input[name="questao3"]:checked') ? document.querySelector('input[name="questao3"]:checked').value : null,
             questao4: document.querySelector('textarea[name="questao4"]').value,
             questao5: document.querySelector('textarea[name="questao5"]').value,
             questao6: document.querySelector('textarea[name="questao6"]').value,
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
 
         if (validateForm()) {
-            const formData = collectFormData();
+            var formData = collectFormData();
             processFormResponses(formData);
             alert('Formulário enviado com sucesso!');
         } else {
