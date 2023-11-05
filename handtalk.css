@@ -1,0 +1,62 @@
+/* Estilos CSS para o formulário e as perguntas */
+/* Estilos para o formulário */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Estilos para perguntas e legendas */
+p, legend {
+    font-weight: bold;
+}
+
+/* Estilos CSS para o texto das legendas */
+fieldset legend {
+    font-size: 22px; /* Defina o tamanho da fonte desejado, por exemplo, 18 pixels */
+}
+
+/* Estilos CSS para o título */
+h1 {
+    color: rgb(41, 41, 83); /* Define a cor azul para o texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona sombreado ao texto */
+}
+
+/* Estilos para rótulos */
+label {
+    display: block; /* Faz cada rótulo aparecer em sua própria linha */
+    margin-top: 5px;
+}
+
+/* Estilo para ocultar inicialmente as perguntas 3 e 7 */
+fieldset#pergunta3, fieldset#pergunta7 {
+    display: none;
+}
+
+/* Estilos CSS para a imagem */
+.imagem-canto-superior-esquerdo {
+    position: absolute; /* Define a posição absoluta para que a imagem não afete o layout do restante da página */
+    top: 0; /* Alinha a imagem no topo da janela do navegador */
+    left: 0; /* Alinha a imagem à esquerda da janela do navegador */
+    max-width: 100px; /* Defina a largura máxima da imagem conforme necessário */
+    max-height: 100px; /* Defina a altura máxima da imagem conforme necessário */
+    transform: scale(1.15); /* Aumenta a imagem em 15% */
+    transform-origin: top left; /* Define o ponto de origem da transformação no canto superior esquerdo */
+}
+
+/* Estilos CSS para o botão "Enviar" */
+.botao-negrito {
+    font-weight: bold;
+}
+
+/* Estilos para o botão com borda */
+.botao-com-borda {
+    font-weight: bold;
+    border: 2px solid green; /* Defina o estilo da borda desejado aqui */
+    padding: 5px 10px; /* Ajuste o preenchimento conforme necessário */
+    border-radius: 5px; /* Opcional: Adicione cantos arredondados à borda */
+}
+
+
+

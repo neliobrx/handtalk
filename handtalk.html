@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Questionário Hand Talk</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Estilos CSS para a imagem */
+        .imagem-canto-superior-esquerdo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 200px;
+            max-height: 200px;
+        }
+    
+        h1 {
+            margin-top: 200px;
+        }
+
+        .imagem-canto-superior-direito {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 200px;
+    max-height: 200px;
+}
+    </style>    
+
+</head>
+<body>
+    <h1 style="color: rgb(57, 57, 121);">Questionário Hand Talk</h1>
+
+    <img src="imagens/UFPA.png" alt="Descrição da Imagem" class="imagem-canto-superior-esquerdo">
+    <img src="imagens/HANDTALK.jpg" alt="Descrição da imagem" class="imagem-canto-superior-direito">
+
+    
+    <form id="questionnaireForm">
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <legend>Questão 1. Você percebeu que o Hand Talk oferece suporte à LIBRAS regionalizada?</legend>
+            <div class="radio-option">
+                <label for="questao1-sim">Sim</label>
+                <input type="radio" id="questao1-sim" name="questao1" value="Sim">
+            </div>
+            <div class="radio-option">
+                <label for="questao1-nao">Não</label>
+                <input type="radio" id="questao1-nao" name="questao1" value="Não">
+            </div>
+            <div class="radio-option">
+                <label for="questao1-talvez">Talvez</label>
+                <input type="radio" id="questao1-talvez" name="questao1" value="Talvez">
+            </div>
+        </fieldset>
+
+        <!-- Questão 2 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <p>Questão 2. O aplicativo atende às suas necessidades de comunicação em LIBRAS em sua região? Se não, explique por quê.</p>
+            <textarea name="questao2" rows="4" cols="50" aria-label="Resposta à Questão 2" style="width: 1284px; height: 50px;" readonly></textarea>
+        </fieldset>
+
+        <!-- Questão 3 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <legend>Questão 3. Você acha que a falta de suporte à LIBRAS regionalizada é um problema no Hand Talk?</legend>
+            <div class="radio-option">
+                <label for="questao3-sim">Sim</label>
+                <input type="radio" id="questao3-sim" name="questao3" value="Sim">
+            </div>
+            <div class="radio-option">
+                <label for="questao3-nao">Não</label>
+                <input type="radio" id="questao3-nao" name="questao3" value="Não">
+            </div>
+            <div class="radio-option">
+                <label for="questao3-nao-tenho-certeza">Não tenho certeza</label>
+                <input type="radio" id="questao3-nao-tenho-certeza" name="questao3" value="Não tenho certeza">
+            </div>
+        </fieldset>
+
+        <!-- Questão 4 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <p>Questão 4. Quais desafios específicos você enfrenta ao usar o Hand Talk para se comunicar em LIBRAS em sua região?</p>
+            <textarea name="questao4" rows="4" cols="50" aria-label="Resposta à Questão 4" style="width: 1284px; height: 50px;" readonly></textarea>
+        </fieldset>
+
+        <!-- Questão 5 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <p>Questão 5. Você já teve dificuldade em compreender ou ser compreendido por outros usuários do Hand Talk de diferentes regiões do Brasil? Por favor, compartilhe sua experiência.</p>
+            <textarea name="questao2" rows="4" cols="50" aria-label="Resposta à Questão 2" style="width: 1284px; height: 50px;" readonly></textarea>
+        </fieldset>
+
+        <!-- Questão 6 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <p>Questão 6. Acredita que o Hand Talk poderia ser aprimorado para tornar a comunicação em LIBRAS mais adaptada às variações regionais? Se sim, de que maneira?</p>
+            <textarea name="questao6" rows="4" cols="50" aria-label="Resposta à Questão 6" style="width: 1284px; height: 50px;" readonly></textarea>
+        </fieldset>
+
+        <!-- Questão 7 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <legend>Questão 7. Você acredita que a regionalização da LIBRAS é importante para melhorar a acessibilidade e a inclusão dos surdos em todo o Brasil?</legend>
+            <div class="radio-option">
+                <label for="questao7-sim">Sim</label>
+                <input type="radio" id="questao7-sim" name="questao7" value="Sim">
+            </div>
+            <div class="radio-option">
+                <label for="questao7-nao">Não</label>
+                <input type="radio" id="questao7-nao" name="questao7" value="Não">
+            </div>
+            <div class="radio-option">
+                <label for="questao7-nao-tenho-certeza">Não tenho certeza</label>
+                <input type="radio" id="questao7-nao-tenho-certeza" name="questao7" value="Não tenho certeza">
+            </div>
+        </fieldset>
+
+        <!-- Questão 8 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <p>Questão 8. Quais sugestões você tem para tornar o Hand Talk mais eficaz na abordagem das variações regionais da LIBRAS?</p>
+            <textarea name="questao8" rows="4" cols="50" aria-label="Resposta à Questão 8" style="width: 1284px; height: 50px;" readonly></textarea>
+        </fieldset>
+
+        <!-- Questão 9 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <p>Questão 9. Você acha que a falta de suporte à LIBRAS regionalizada no Hand Talk afeta a qualidade da educação inclusiva para surdos em sua região? Se sim, como?</p>
+            <textarea name="questao9" rows="4" cols="50" aria-label="Resposta à Questão 9" style="width: 1284px; height: 50px;" readonly></textarea>
+        </fieldset>
+        <!-- Questão 10 -->
+        <fieldset style="margin-bottom: 20px;"> <!-- Adicionei margem na parte inferior -->
+            <legend>Questão 10. Você estaria disposto a colaborar ou contribuir de alguma forma para ajudar a melhorar a regionalização da LIBRAS no Hand Talk?</legend>
+            <div class="radio-option">
+                <label for="questao10-sim">Sim</label>
+                <input type="radio" id="questao10-sim" name="questao10" value="Sim">
+            </div>
+            <div class="radio-option">
+                <label for="questao10-nao">Não</label>
+                <input type="radio" id="questao10-nao" name="questao10" value="Não">
+            </div>
+            <div class="radio-option">
+                <label for="questao10-talvez">Talvez</label>
+                <input type="radio" id="questao10-talvez" name="questao10" value="Talvez">
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Enviar" class="botao-com-borda">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
